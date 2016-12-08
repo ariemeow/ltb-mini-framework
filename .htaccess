@@ -1,0 +1,20 @@
+#Order Deny,Allow
+#Deny from all
+#Allow from 127.0.0.1
+
+#<files config.json>
+#order allow,deny
+#allow from 127.0.0.1
+#</files>
+
+RewriteEngine On
+
+RewriteBase /
+
+RewriteRule ^index.php$ - [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule . /index.php [L]

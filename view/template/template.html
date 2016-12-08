@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>{% block title %}{% endblock %}</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.ico" />
+{% if css is defined %} {% for csspath in css %}
+<link href="{{ csspath }}" rel="stylesheet" type="text/css">
+{% endfor %} {% endif %}
+</head>
+<body>
+{% block content %}{% endblock %}
+
+{% if js is defined %} {% for jspath in js %}
+	<script src="{{ jspath }}" type="text/javascript"></script>
+{% endfor %} {% endif %}
+</body>
+</html>
